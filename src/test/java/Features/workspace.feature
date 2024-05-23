@@ -1,3 +1,4 @@
+@workspace
 Feature: admin can Crude workspace
  Scenario: admin can create workspace
    Given Admin log in dashboard

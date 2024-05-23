@@ -4,9 +4,13 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.interactions.Actions;
 import pages.ideaPage;
 
 import javax.swing.*;
+
+import static Base.Base.driver;
 
 public class IdeaSteps {
     ideaPage page = new ideaPage();
@@ -28,7 +32,9 @@ public class IdeaSteps {
 
     @And("user add picture")
     public void userAddPicture() throws InterruptedException {
-        page.ideaPicture.sendKeys("C:\\Users\\Darwish\\Desktop\\retm\\src\\test\\java\\Files\\images.jpeg");
+
+
+        page.ideaPicture.sendKeys("C:\\Users\\Elswalhi\\IdeaProjects\\Retm-Automation-testing\\src\\test\\java\\Files\\images.jpeg");
         Thread.sleep(5000);
     }
 
@@ -48,7 +54,7 @@ public class IdeaSteps {
         Assert.assertTrue(isIdea);
     }
 
-    @And("user  click on idea")
+    @And("user click on idea")
     public void userClickOnIdea() {
         page.idea.click();
 
@@ -87,5 +93,69 @@ public class IdeaSteps {
     public void userEnterEditTextAs(String arg0) {
         page.ideaText.clear();
 //        page.ideaText.sendKeys(arg0);
+    }
+
+    @And("user enter comment as {string}")
+    public void userEnterCommentAs(String arg0) {
+        page.commentInput.sendKeys(arg0);
+    }
+
+    @And("user click send")
+    public void userClickSend() throws InterruptedException {
+        Thread.sleep(500);
+        page.commentSend.click();
+    }
+
+    @Then("comment posted")
+    public void commentPosted() {
+        String comment =page.comment.getText();
+        Assert.assertEquals("test comment",comment);
+    }
+
+
+    @Then("user click on comment more button")
+    public void userClickOnCommentMoreButton() throws InterruptedException {
+        Actions action = new Actions(driver);
+        page.commentMore.click();
+    }
+
+    @And("click on delete comment")
+    public void clickOnDeleteComment() throws InterruptedException {
+        Thread.sleep(1000);
+    page.commentDelete.click();
+    }
+
+    @Then("comment deleted")
+    public void commentDeleted() throws InterruptedException {
+        Thread.sleep(1000);
+        try {
+            // Attempt to find and check if the comment is displayed
+            boolean isComment = page.comment.isDisplayed();
+            Assert.assertFalse("Comment should be deleted but it is still displayed", isComment);
+        } catch (NoSuchElementException e) {
+            Assert.assertTrue("Comment is successfully deleted", true);
+        }
+    }
+
+    @And("user click on Approve")
+    public void userClickOnApprove() {
+        page.ideaApprove.click();
+    }
+
+    @Then("idea Approved")
+    public void ideaApproved() {
+    boolean isApproved = page.success.isDisplayed();
+    Assert.assertTrue(isApproved);
+    }
+
+    @And("user click on Reject")
+    public void userClickOnReject() {
+        page.ideaReject.click();
+    }
+
+    @Then("idea Rejected")
+    public void ideaRejected() {
+        boolean isRejected = page.success.isDisplayed();
+        Assert.assertTrue(isRejected);
     }
 }

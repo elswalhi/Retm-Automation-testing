@@ -31,7 +31,7 @@ public class Base {
  public static Properties props = new Properties();
   public static void init()  {
       if(props.getProperty("browser").equalsIgnoreCase("chrome")){
-          WebDriverManager.chromedriver().setup();
+          WebDriverManager.chromedriver().clearDriverCache().setup();
           driver = new ChromeDriver();
 
       } else if (props.getProperty("browser").equalsIgnoreCase("firefox")) {

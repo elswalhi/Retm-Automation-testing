@@ -10,7 +10,7 @@ public class ideaPage {
     public ideaPage() {
         PageFactory.initElements(driver, this);
     }
-    @FindBy(xpath = "//a[contains(text(),'Idea Board')]")
+    @FindBy(linkText = "Idea Board")
     public WebElement ideaPageButton;
     @FindBy(xpath = "//body/div[@id='app']/main[1]/div[3]/div[1]/div[1]/div[1]/div[1]/button[1]")
     public WebElement addIdea;
@@ -32,5 +32,19 @@ public class ideaPage {
     public WebElement editButton;
     @FindBy (xpath = "/html[1]/body[1]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/button[2]")
     public WebElement confirmDeleteButton;
+    @FindBy (xpath = "//body/div[@id='app']/main[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[3]/div[1]/div[1]/textarea[1]")
+    public WebElement commentInput;
+    @FindBy (xpath = "//button[contains(text(),'Send')]")
+    public WebElement commentSend;
+    @FindBy(xpath = "//p[contains(text(), 'test comment')]")
+    public WebElement comment;
+    @FindBy(xpath = "/html/body/div[1]/main/div[3]/div/div/div/div[1]/div[3]/div/div[2]/div/div/div/div/div[2]/button")
+    public WebElement commentMore;
+    @FindBy(xpath = "//span[contains(text(),'Delete Comment')]")
+    public WebElement commentDelete;
+    @FindBy(xpath = "//button[contains(text(),'Approve')]")
+    public WebElement ideaApprove;
+    @FindBy(xpath = "//button[contains(text(),'Reject')]")
+    public WebElement ideaReject;
 
 }

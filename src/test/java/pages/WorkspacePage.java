@@ -32,7 +32,7 @@ public class WorkspacePage {
     public WebElement allLink;
     @FindBy(css = ".Vue-Toastification__toast-body")
     public WebElement success;
-    @FindBy(xpath = "//body/div[@id='app']/main[1]/div[3]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/button[1]/*[1]")
+    @FindBy(xpath = "//body/div[@id='app']/main[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/button[1]/*[1]")
     public WebElement workSpaceMore;
     @FindBy(xpath = "//button[contains(text(),'Delete')]")
     public WebElement workSpaceDelete;

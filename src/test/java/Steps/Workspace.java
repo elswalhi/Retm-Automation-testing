@@ -5,6 +5,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.interactions.Actions;
 import pages.WorkspacePage;
 
 import java.awt.*;
@@ -67,7 +68,8 @@ public class Workspace {
 
     @And("Admin click more button")
     public void adminClickMoreButton() {
-        page.workSpaceMore.click();
+        Actions action = new Actions(driver);
+        action.moveToElement(page.workSpaceMore).doubleClick(page.workSpaceMore).perform();
     }
 
     @And("Admin Click on delete workspace")
