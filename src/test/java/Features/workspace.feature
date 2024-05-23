@@ -1,13 +1,14 @@
-@workspace
+
 Feature: admin can Crude workspace
- Scenario: admin can create workspace
+  @workspace1
+  Scenario: admin can create workspace
    Given Admin log in dashboard
    When Admin click on create workspace button
-   And Enter workspace Name as "Test Automation Workspace11"
+   And Enter workspace Name as "Test Automation Workspace12"
    And click on next button
    And click on invite late
    And click on complete later
-   Then Workspace Created and user can see "Test Automation Workspace11" on active workspace
+   Then Workspace Created and user can see "Test Automation Workspace12" on active workspace
 
   Scenario: admin can delete workspace
     Given Admin navigate to workspaces page

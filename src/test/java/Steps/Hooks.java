@@ -25,7 +25,6 @@ public class Hooks extends Base {
             // Attach screenshot to Allure
             Allure.addAttachment("Screenshot on Failure", new ByteArrayInputStream(screenshot));
         }
-        Thread.sleep(3000);
         driver.quit();
     }
 }

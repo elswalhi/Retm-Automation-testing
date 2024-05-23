@@ -128,6 +128,7 @@ public class IdeaSteps {
     @Then("comment deleted")
     public void commentDeleted() throws InterruptedException {
         Thread.sleep(1000);
+
         try {
             // Attempt to find and check if the comment is displayed
             boolean isComment = page.comment.isDisplayed();
@@ -158,4 +159,5 @@ public class IdeaSteps {
         boolean isRejected = page.success.isDisplayed();
         Assert.assertTrue(isRejected);
     }
+
 }

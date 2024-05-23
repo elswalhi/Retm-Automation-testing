@@ -5,7 +5,7 @@ import org.junit.runners.Suite;
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
-//        TestRunnerPriority1.class,
+        TestRunnerPriority1.class,
         TestRunnerPriority2.class,
 
 

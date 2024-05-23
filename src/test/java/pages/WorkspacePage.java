@@ -22,7 +22,7 @@ public class WorkspacePage {
     public WebElement emailInput1;
     @FindBy(css = "button.flex.items-center.gap-2.text-primary[type='button']")
     public WebElement addMoreButton;
-    @FindBy(css = "button.btn.w-full.lg.bordered[type='button']")
+    @FindBy(xpath = "//body/div[@id='app']/main[1]/div[1]/div[1]/div[1]/div[3]/div[1]/button[1]")
     public WebElement inviteLaterButton;
     @FindBy(css = "a.btn.lg.w-full.bordered[href='/dashboard']")
     public WebElement completeLaterLink;
