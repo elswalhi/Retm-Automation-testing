@@ -12,8 +12,10 @@ public class ideaPage {
     }
     @FindBy(linkText = "Idea Board")
     public WebElement ideaPageButton;
-    @FindBy(xpath = "//body/div[@id='app']/main[1]/div[3]/div[1]/div[1]/div[1]/div[1]/button[1]")
+    @FindBy(xpath = "//body/div[@id='app']/main[1]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/button[1]")
     public WebElement addIdea;
+    @FindBy(xpath = "//button[contains(text(),'Create Idea')]")
+    public WebElement addIdeaE;
     @FindBy (xpath = "//textarea[@id='content']")
     public WebElement ideaText;
     @FindBy (className = "filepond--browser")
@@ -22,23 +24,23 @@ public class ideaPage {
     public WebElement SaveButton;
     @FindBy(css = ".Vue-Toastification__toast-body")
     public WebElement success;
-    @FindBy (xpath = "//body/div[@id='app']/main[1]/div[3]/div[1]/div[1]/div[2]/a[1]/div[1]/div[1]")
+    @FindBy (xpath = "//body/div[@id='app']/main[1]/div[2]/div[1]/div[3]/div[1]/div[2]/a[1]/div[1]/div[1]")
     public WebElement idea;
-    @FindBy (xpath = "/html[1]/body[1]/div[1]/main[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/button[1]")
+    @FindBy (xpath = "/html[1]/body[1]/div[1]/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/button[1]")
     public WebElement moreButton;
-    @FindBy (xpath = "//body/div[@id='app']/main[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/button[2]")
+    @FindBy (xpath = "//span[contains(text(),'Delete Idea')]")
     public WebElement deleteButton;
     @FindBy (xpath = "/html[1]/body[1]/div[1]/main[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/button[1]")
     public WebElement editButton;
     @FindBy (xpath = "/html[1]/body[1]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/button[2]")
     public WebElement confirmDeleteButton;
-    @FindBy (xpath = "//body/div[@id='app']/main[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[3]/div[1]/div[1]/textarea[1]")
+    @FindBy (tagName = "textarea")
     public WebElement commentInput;
     @FindBy (xpath = "//button[contains(text(),'Send')]")
     public WebElement commentSend;
     @FindBy(xpath = "//p[contains(text(), 'test comment')]")
     public WebElement comment;
-    @FindBy(xpath = "/html/body/div[1]/main/div[3]/div/div/div/div[1]/div[3]/div/div[2]/div/div/div/div/div[2]/button")
+    @FindBy(xpath = "/html[1]/body[1]/div[1]/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/button[1]")
     public WebElement commentMore;
     @FindBy(xpath = "//span[contains(text(),'Delete Comment')]")
     public WebElement commentDelete;

@@ -3,6 +3,7 @@ package Steps;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import org.apache.commons.logging.impl.SLF4JLog;
 import org.junit.Assert;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.interactions.Actions;
@@ -21,9 +22,16 @@ public class IdeaSteps {
 
     @And("user click on add idea")
     public void userClickOnAddIdea() {
-    page.addIdea.click();
+        try {
+            if (page.addIdea.isDisplayed()) {
+                page.addIdea.click();
+            }
+        } catch (NoSuchElementException e) {
+            if (page.addIdeaE.isDisplayed()) {
+                page.addIdeaE.click();
+            }
+        }
     }
-
     @And("user enter text as {string}")
     public void userEnterText(String arg0) {
         page.ideaText.clear();
@@ -34,7 +42,7 @@ public class IdeaSteps {
     public void userAddPicture() throws InterruptedException {
 
 
-        page.ideaPicture.sendKeys("C:\\Users\\Elswalhi\\IdeaProjects\\Retm-Automation-testing\\src\\test\\java\\Files\\images.jpeg");
+        page.ideaPicture.sendKeys("C:\\Users\\Darwish\\IdeaProjects\\Retm-Automation-testing\\src\\test\\java\\Files\\images.jpeg");
         Thread.sleep(5000);
     }
 

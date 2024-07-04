@@ -22,17 +22,17 @@ public class WorkspacePage {
     public WebElement emailInput1;
     @FindBy(css = "button.flex.items-center.gap-2.text-primary[type='button']")
     public WebElement addMoreButton;
-    @FindBy(xpath = "//body/div[@id='app']/main[1]/div[1]/div[1]/div[1]/div[3]/div[1]/button[1]")
+    @FindBy(xpath = "/html[1]/body[1]/div[1]/main[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/button[1]")
     public WebElement inviteLaterButton;
     @FindBy(css = "a.btn.lg.w-full.bordered[href='/dashboard']")
     public WebElement completeLaterLink;
-    @FindBy(xpath = "/html[1]/body[1]/div[1]/main[1]/div[1]/div[1]/div[2]/button[1]")
+    @FindBy(xpath = "/html[1]/body[1]/div[1]/main[1]/div[1]/div[1]/div[1]/div[2]/button[1]")
     public WebElement testButton;
     @FindBy(xpath = "//a[contains(text(),'All')]")
     public WebElement allLink;
     @FindBy(css = ".Vue-Toastification__toast-body")
     public WebElement success;
-    @FindBy(xpath = "//body/div[@id='app']/main[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/button[1]/*[1]")
+    @FindBy(xpath = "/html[1]/body[1]/div[1]/main[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/button[1]")
     public WebElement workSpaceMore;
     @FindBy(xpath = "//button[contains(text(),'Delete')]")
     public WebElement workSpaceDelete;

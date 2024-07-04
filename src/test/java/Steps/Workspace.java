@@ -16,8 +16,8 @@ public class Workspace {
    WorkspacePage page = new WorkspacePage();
     @Given("Admin log in dashboard")
     public void adminLogInDashboard() throws InterruptedException {
-        String expectedUrl="https://retm.neop.co/dashboard";
-        Thread.sleep(1000);
+        String expectedUrl="https://retm-stage.neop.co/dashboard";
+        Thread.sleep(2000);
        String actualUrl = driver.getCurrentUrl();
 
         Assert.assertEquals(expectedUrl,actualUrl);
@@ -34,13 +34,15 @@ public class Workspace {
     }
 
     @And("click on next button")
-    public void clickOnNextButton() {
+    public void clickOnNextButton() throws InterruptedException {
+    Thread.sleep(1000);
     page.nextButton.click();
     }
 
 
     @And("click on invite late")
-    public void clickOnInviteLate() {
+    public void clickOnInviteLate() throws InterruptedException {
+        Thread.sleep(10000);
         page.inviteLaterButton.click();
     }
 

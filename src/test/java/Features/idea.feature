@@ -1,4 +1,4 @@
-@idea
+
 Feature: User Crud Create Idea
 
 Scenario: user can create idea
@@ -61,3 +61,5 @@ Scenario: user can create idea
     And user click on idea
     And user click on Reject
     Then idea Rejected
+
+#  Scenario: user can

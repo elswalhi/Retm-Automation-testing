@@ -45,7 +45,9 @@ public class Base {
       String  username= props.getProperty("username");
       String  password= props.getProperty("password");
       driver.manage().window().maximize();
-      driver.manage().timeouts().implicitlyWait(6000, TimeUnit.MILLISECONDS);
+      driver.manage().timeouts().pageLoadTimeout(10,TimeUnit.SECONDS);
+      driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
       driver.get(url);
       driver.findElement(By.id("email")).sendKeys(username);
       driver.findElement(By.id("password")).sendKeys(password);
