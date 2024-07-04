@@ -48,5 +48,8 @@ public class ideaPage {
     public WebElement ideaApprove;
     @FindBy(xpath = "//button[contains(text(),'Reject')]")
     public WebElement ideaReject;
+    @FindBy(xpath = "//p[contains(text(),'Just an idea')]")
+    public WebElement justIdea;
+
 
 }

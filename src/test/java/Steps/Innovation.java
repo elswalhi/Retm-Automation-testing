@@ -120,4 +120,18 @@ public class Innovation {
 
         Assert.assertEquals(expectedUrl,actualUrl);
     }
+
+    @Then("user can see just an innovation or create post")
+    public void userCanSeeJustAnInnovationOrCreatePost() {
+        try {
+            if (page.addPost.isDisplayed()) {
+                Assert.assertTrue(page.ideaToBE.isDisplayed());
+            }
+        } catch (NoSuchElementException e) {
+            if (page.addPostE.isDisplayed()) {
+                Assert.assertTrue(page.addPostE.isDisplayed());
+
+            }
+        }
+    }
 }

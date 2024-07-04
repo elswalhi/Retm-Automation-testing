@@ -40,5 +40,6 @@ public class InnovationPage {
     public WebElement  feedback ;
     @FindBy(xpath = "/html[1]/body[1]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/button[1]")
     public WebElement  saveFeedback ;
-
+    @FindBy(xpath = "//p[contains(text(),'ideas to be posts')]")
+    public WebElement ideaToBE;
 }

@@ -168,4 +168,18 @@ public class IdeaSteps {
         Assert.assertTrue(isRejected);
     }
 
+    @Then("user can see just an idea or create idea")
+    public void userCanSeeJustAnIdeaOrCreateIdea() {
+
+        try {
+            if (page.addIdea.isDisplayed()) {
+                Assert.assertTrue(page.justIdea.isDisplayed());
+            }
+        } catch (NoSuchElementException e) {
+            if (page.addIdeaE.isDisplayed()) {
+                Assert.assertTrue(page.addIdeaE.isDisplayed());
+
+            }
+        }
+    }
 }
