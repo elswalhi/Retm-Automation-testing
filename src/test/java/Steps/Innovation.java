@@ -134,4 +134,14 @@ public class Innovation {
             }
         }
     }
+
+    @And("user click on post publish")
+    public void userClickOnPostPublish() {
+        page.publish.click();
+    }
+
+    @And("user click on Approved post")
+    public void userClickOnApprovedPost() {
+        page.approvedPost.click();
+    }
 }

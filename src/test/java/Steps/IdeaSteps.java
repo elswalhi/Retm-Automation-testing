@@ -1,17 +1,15 @@
 package Steps;
+import java.nio.file.Path;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import org.apache.commons.logging.impl.SLF4JLog;
 import org.junit.Assert;
 import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.interactions.Actions;
 import pages.ideaPage;
 
-import javax.swing.*;
+import java.nio.file.Paths;
 
-import static Base.Base.driver;
 
 public class IdeaSteps {
     ideaPage page = new ideaPage();
@@ -40,12 +38,24 @@ public class IdeaSteps {
 
     @And("user add picture")
     public void userAddPicture() throws InterruptedException {
+        // Convert the relative path to an absolute path
+        Path path = Paths.get("src/test/java/Files/images.jpeg").toAbsolutePath();
+        String absolutePath = path.toString();
 
+        // Print the absolute path to verify
+        System.out.println("Absolute path to the file: " + absolutePath);
 
-        page.ideaPicture.sendKeys("C:\\Users\\Darwish\\IdeaProjects\\Retm-Automation-testing\\src\\test\\java\\Files\\images.jpeg");
+        // Check if the file exists
+        if (path.toFile().exists()) {
+            // Use the absolute path in sendKeys
+            page.ideaPicture.sendKeys(absolutePath);
+        } else {
+            // Print an error message if the file does not exist
+            System.err.println("File not found: " + absolutePath);
+        }
+
         Thread.sleep(5000);
     }
-
     @And("user click save")
     public void userClickSave() throws InterruptedException {
 
@@ -100,7 +110,7 @@ public class IdeaSteps {
     @And("user edit text as {string}")
     public void userEnterEditTextAs(String arg0) {
         page.ideaText.clear();
-//        page.ideaText.sendKeys(arg0);
+        page.ideaText.sendKeys(arg0);
     }
 
     @And("user enter comment as {string}")
@@ -122,8 +132,7 @@ public class IdeaSteps {
 
 
     @Then("user click on comment more button")
-    public void userClickOnCommentMoreButton() throws InterruptedException {
-        Actions action = new Actions(driver);
+    public void userClickOnCommentMoreButton()  {
         page.commentMore.click();
     }
 

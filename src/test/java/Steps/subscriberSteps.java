@@ -11,6 +11,7 @@ public class subscriberSteps {
 
     @Given("Admin navigate to Subscribers page")
     public void adminNavigateToSubscribersPage() throws InterruptedException {
+
         page.SidebarButton.click();
         Thread.sleep(100);
         page.subscribersPageButton.click();
@@ -40,7 +41,6 @@ public class subscriberSteps {
     public void adminEnterSubscriberPhoneAs(String arg0) {
 
         page.subscribersPhone.sendKeys(arg0);
-
     }
 
     @And("Admin click save")

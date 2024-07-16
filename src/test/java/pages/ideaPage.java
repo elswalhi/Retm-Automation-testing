@@ -30,7 +30,7 @@ public class ideaPage {
     public WebElement moreButton;
     @FindBy (xpath = "//span[contains(text(),'Delete Idea')]")
     public WebElement deleteButton;
-    @FindBy (xpath = "/html[1]/body[1]/div[1]/main[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/button[1]")
+    @FindBy (xpath = "//span[contains(text(),'Edit Idea')]")
     public WebElement editButton;
     @FindBy (xpath = "/html[1]/body[1]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/button[2]")
     public WebElement confirmDeleteButton;

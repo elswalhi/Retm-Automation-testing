@@ -63,3 +63,14 @@ Feature: User Crud Create post
     And user enter feedback as "this is feedback"
     And user click on save feedback
     Then post revision requested
+  Scenario: user can publish the post
+    Given user navigate to post page
+    And user click on add post
+    And user enter post text as "test automation publish"
+    And user add picture
+    And user click save draft
+    Then post created
+    Given user navigate to post page
+    And user click on Approved post
+    And user click on post publish
+    Then post Approved

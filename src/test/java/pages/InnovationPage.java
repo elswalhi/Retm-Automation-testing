@@ -42,4 +42,8 @@ public class InnovationPage {
     public WebElement  saveFeedback ;
     @FindBy(xpath = "//p[contains(text(),'ideas to be posts')]")
     public WebElement ideaToBE;
+    @FindBy(xpath = "//button[contains(text(),'Publish Now')]")
+    public WebElement publish;
+    @FindBy(xpath = "//body/div[@id='app']/main[1]/div[2]/div[1]/div[3]/div[3]/div[2]/a[1]/div[1]/div[1]")
+    public WebElement approvedPost;
 }
